@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: demo
+  #h2 db 설정
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: test
+    url: jdbc:h2:~/test
+    password: test
+  h2:
+    console:
+      enabled: 'true'
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
+  #spring jpa 설정
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  
+  kafka:
+    consumer:
+      bootstrap-servers: 172.19.51.128:9092
+      group-id: cg-test
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        enable.auto.commit: false
+    producer:
+      bootstrap-servers: 172.19.51.128:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health

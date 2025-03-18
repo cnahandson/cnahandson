@@ -1,0 +1,10 @@
+controller:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hostName: jenkins.test.com
+  resources:
+    limits:
+      memory: "2048Mi"
+  javaOpts: "-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Seoul -Duser.timezone=Asia/Seoul -Dhudson.model.UpdateCenter.updateCenterUrl=http://updates.jenkins.io/"
+  installPlugins: []
