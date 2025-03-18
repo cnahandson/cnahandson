@@ -1,0 +1,7 @@
+1.8.4.2.2
+https://kafka.apache.org/downloads
+curl -o kafka.tgz https://downloads.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+
+1.8.4.2.3
+https://github.com/devshawn/kafka-gitops
+https://devshawn.github.io/kafka-gitops/#/documentation

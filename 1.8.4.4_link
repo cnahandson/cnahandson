@@ -1,0 +1,19 @@
+1.8.4.4.2
+1.1 helm 설치
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+https://github.com/helm/helm/releases
+
+3. Gitlab 설치
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+
+4. Jenkins 설치
+https://artifacthub.io/packages/helm/jenkinsci/jenkins
+helm repo add jenkinsci https://charts.jenkins.io --insecure-skip-tls-verify
+https://updates.jenkins.io/download/plugins/skip-certificate-check/1.1/skip-certificate-check.hpi
+
+5. private registry 설치
+https://hub.docker.com/_/registry
+
+6. argo-cd 설치
+https://artifacthub.io/packages/helm/argo/argo-cd
+helm repo add argo https://argoproj.github.io/argo-helm

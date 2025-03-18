@@ -1,0 +1,2 @@
+1.8.4.1.2
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl
