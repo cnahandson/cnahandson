@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: all-services-monitor
+  namespace: monitoring   # Prometheus가 실행되는 네임스페이스
+  labels:
+    release: prometheus   # Prometheus Helm 설치 시 사용한 이름 (다를 경우 변경)
+spec:
+  namespaceSelector:
+    matchNames:
+      - demo    # 모니터링할 네임스페이스
+  selector: {}            # 특정 라벨 없이 모든 서비스 선택
+  endpoints:
+    - targetPort: 8080        # 서비스의 포트 번호
+      path: /actuator/prometheus      # 메트릭 엔드포인트
+      interval: 5s       # 스크래핑 주기
